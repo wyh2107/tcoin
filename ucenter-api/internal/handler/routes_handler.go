@@ -10,5 +10,5 @@ import (
 func RegisterHandlers(r *Routers, serviceCtx *svc.ServiceContext) {
 	register := NewRegisterHandler(serviceCtx)
 	registerRouter := r.Group()
-	registerRouter.GET("/uc/register/phone", register.Register)
+	registerRouter.POST("/uc/register/phone", register.Register)
 }
