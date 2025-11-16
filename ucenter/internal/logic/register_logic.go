@@ -8,22 +8,22 @@ import (
 	"github.com/zeromicro/go-zero/core/logx"
 )
 
-type RegisterByPhoneLogic struct {
+type RegisterLogic struct {
 	ctx    context.Context
 	svcCtx *svc.ServiceContext
 	logx.Logger
 }
 
-func NewRegisterByPhoneLogic(ctx context.Context, svcCtx *svc.ServiceContext) *RegisterByPhoneLogic {
-	return &RegisterByPhoneLogic{
+func NewRegisterLogic(ctx context.Context, svcCtx *svc.ServiceContext) *RegisterLogic {
+	return &RegisterLogic{
 		ctx:    ctx,
 		svcCtx: svcCtx,
 		Logger: logx.WithContext(ctx),
 	}
 }
 
-func (l *RegisterByPhoneLogic) RegisterByPhone(in *register.RegReq) (*register.RegRes, error) {
+func (l *RegisterLogic) RegisterByPhone(in *register.RegReq) (*register.RegRes, error) {
 	// todo: add your logic here and delete this line
-
+	logx.Debug("===========================UCenter ==================")
 	return &register.RegRes{}, nil
 }

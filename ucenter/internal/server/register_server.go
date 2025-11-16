@@ -6,14 +6,14 @@ package server
 
 import (
 	"context"
-	register2 "grpc-common/ucenter/types/register"
+	"grpc-common/ucenter/types/register"
 	"ucenter/internal/logic"
 	"ucenter/internal/svc"
 )
 
 type RegisterServer struct {
 	svcCtx *svc.ServiceContext
-	register2.UnimplementedRegisterServer
+	register.UnimplementedRegisterServer
 }
 
 func NewRegisterServer(svcCtx *svc.ServiceContext) *RegisterServer {
@@ -22,7 +22,7 @@ func NewRegisterServer(svcCtx *svc.ServiceContext) *RegisterServer {
 	}
 }
 
-func (s *RegisterServer) RegisterByPhone(ctx context.Context, in *register2.RegReq) (*register2.RegRes, error) {
-	l := logic.NewRegisterByPhoneLogic(ctx, s.svcCtx)
+func (s *RegisterServer) RegisterByPhone(ctx context.Context, in *register.RegReq) (*register.RegRes, error) {
+	l := logic.NewRegisterLogic(ctx, s.svcCtx)
 	return l.RegisterByPhone(in)
 }
